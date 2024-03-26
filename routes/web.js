@@ -22,5 +22,5 @@ router.delete("/productdelete/:id", ProductController.productdelete);
 //Registration Routing
 router.post("/userinsert", RegisterController.userInsert);
 router.post("/userlogin", RegisterController.userLogin);
-router.get("/getuserdetail/:id", RegisterController.getuserdetail);
+router.get("/getuserdetail",checkAuth,RegisterController.getuserdetail);
 module.exports = router;

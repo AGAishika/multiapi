@@ -60,7 +60,7 @@ class RegisterController {
   };
 
   static userLogin = async (req, res) => {
-    // console.log(req.body);
+    console.log(req.body);
     try {
       const { email, password } = req.body;
       if (email && password) {
@@ -88,8 +88,8 @@ class RegisterController {
             // req.redirect("/login");
           }
         } else {
-          req.flash("error", "you are not register user");
-          req.redirect("/register");
+          // req.flash("error", "you are not register user");
+          // req.redirect("/register");
         }
       } else {
         req.flash("error", "all fields are required");
@@ -100,7 +100,7 @@ class RegisterController {
   static getuserdetail = async (req, res) => {
     try {
       // const { id, name, email } = req.params.id;
-      const admin = await RegisterUserModel.findById(req.params.id);
+      const admin = req.data1
       //  console.log(admin);
       res.status(201).json({
         status: "success",
